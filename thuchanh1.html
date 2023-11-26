@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thực hành 1</title>
+</head>
+<body>
+<script>
+    class Battery{
+        constructor(energy) {
+            this.energy = energy;
+        }
+        setEnergy(){
+            return this.energy;
+        }
+        getEnergy(){
+            return this.energy;
+        }
+        decreaseEnergy(){
+            if(this.energy > 0){
+                this.energy --;
+            }
+        }
+    }
+    class FlashLamp{
+        constructor(status, battery) {
+            this.status = true;
+            this.battery = battery;
+        }
+        setBattery(battery1){
+           return battery1.getEnergy();
+        }
+        light(){
+            if (this.status){
+                alert("Sáng");
+            }else {
+                alert("Không sáng")
+            }
+        }
+        turnOn(){
+            this.status = true;
+        }
+        turnOff(){
+            this.status = false;
+        }
+    }
+
+    let battery = new Battery(10);
+    let flash = new FlashLamp(true, battery.getEnergy());
+</script>
+</body>
+</html>
